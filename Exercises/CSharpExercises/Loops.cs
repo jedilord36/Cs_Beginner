@@ -88,5 +88,26 @@ namespace Exercises.CSharpExercises
             else
                 Console.WriteLine("You lost.  The random number was " + randomNum);
         }
+
+        // <summary>
+        // Udemy Course C# Basics for Beginners
+        // Exercise 49-5
+        // Write a program and ask the user to enter a series of numbers separated by commas. 
+        // Find the maximum of the numbers and display it on the console.
+        // </summary>
+        public static void Exercise5()
+        {
+            Console.WriteLine("Please enter a series of numbers seprated by commas");
+            var numbers = Console.ReadLine();
+            var numList = numbers.Split(',', StringSplitOptions.RemoveEmptyEntries);
+
+            var max = Int32.Parse(numList[0]);
+
+            foreach (var number in numList)
+                if (max < Int32.Parse(number))
+                    max = Int32.Parse(number);
+
+            Console.WriteLine("Max value is: " + max);
+        }
     }
 }
