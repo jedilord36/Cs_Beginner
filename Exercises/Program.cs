@@ -7,7 +7,7 @@ namespace Exercises
     {
         static void Main(string[] args)
         {
-            Loops.Exercise3();
+            Loops.Exercise4();
         }
     }
 }

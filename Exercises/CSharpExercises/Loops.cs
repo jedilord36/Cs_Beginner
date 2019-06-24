@@ -59,5 +59,34 @@ namespace Exercises.CSharpExercises
                 factorial *= i;
             Console.WriteLine(numInput + "! = " + factorial);
         }
+
+        // <summary>
+        // Udemy Course C# Basics for Beginners
+        // Exercise 49-4
+        // Write a program that picks a random number between 1 and 10. 
+        // Give the user 4 chances to guess the number.
+        // If the user guesses the number, display "You won!", otherwise display "You lost."
+        // </summary>
+        public static void Exercise4()
+        {
+            var random = new Random();
+            var randomNum = random.Next(1, 10);
+            var winnerFlag = false;
+            Console.WriteLine("I've chosen a random number between 1 and 10!\n");
+            for (var i = 1; i < 5; i++)
+            {
+                Console.WriteLine("Guess #" + i + " - Please try to guess the random number");
+                var choice = Int32.Parse(Console.ReadLine());
+                if (choice == randomNum)
+                {
+                    winnerFlag = true;
+                    break;
+                }
+            }
+            if (winnerFlag)
+                Console.WriteLine("You won!");
+            else
+                Console.WriteLine("You lost.  The random number was " + randomNum);
+        }
     }
 }
