@@ -1,4 +1,5 @@
 ﻿using System;
+using Exercises.CSharpExercises;
 
 namespace Exercises
 {
@@ -6,7 +7,7 @@ namespace Exercises
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Loops.Exercise2();
         }
     }
 }

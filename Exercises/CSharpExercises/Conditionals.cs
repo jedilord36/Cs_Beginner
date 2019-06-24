@@ -12,7 +12,7 @@ namespace Exercises.CSharpExercises
         // Write a program and ask the user to enter a number.  The number should be between 1 to 10.
         // If valid, display "Valid" in console.  Otherwise display "Invalid".
         // </summary>
-        public void Exercise1()
+        public static void Exercise1()
         {
             Console.WriteLine("Please enter a number from 1 to 10: ");
             var numInput = Int32.Parse(Console.ReadLine());
@@ -27,7 +27,7 @@ namespace Exercises.CSharpExercises
         // Exercise 43-2
         // Write a program which takes two numbers from the console and displays the maximum of the two.
         // </summary>
-        public void Exercise2()
+        public static void Exercise2()
         {
             Console.WriteLine("Please enter a number: ");
             var numInput1 = Int32.Parse(Console.ReadLine());
@@ -46,7 +46,7 @@ namespace Exercises.CSharpExercises
         // Write a program and ask the user to enter the width and height of an image.
         // Then tell if the image is landscape or portrait.
         // </summary>
-        public void Exercise3()
+        public static void Exercise3()
         {
             Console.WriteLine("Please enter image width: ");
             var width = Int32.Parse(Console.ReadLine());
@@ -68,7 +68,7 @@ namespace Exercises.CSharpExercises
         // For every 5km/hr above the limit, 1 demerit point is incurred.
         // If over 12 demerits, the program should display "License Suspended".
         // </summary>
-        public void Exercise4()
+        public static void Exercise4()
         {
             Console.WriteLine("Please enter the speed limit (km/hr): ");
             var speedLimit = Int32.Parse(Console.ReadLine());
@@ -88,4 +88,4 @@ namespace Exercises.CSharpExercises
         }
     }
 }
-}
+
