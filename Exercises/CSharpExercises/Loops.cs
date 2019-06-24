@@ -44,6 +44,20 @@ namespace Exercises.CSharpExercises
             Console.WriteLine("Sum is: " + sum);
         }
 
-
+        // <summary>
+        // Udemy Course C# Basics for Beginners
+        // Exercise 49-3
+        // Write a program and ask the user to enter a number. 
+        // Compute the factorial of the number and print it on the console.
+        // </summary>
+        public static void Exercise3()
+        {
+            Console.WriteLine("Please enter a number to calculate its factorial");
+            var numInput = Int32.Parse(Console.ReadLine());
+            var factorial = numInput;
+            for (var i = numInput - 1; i > 0; i--)
+                factorial *= i;
+            Console.WriteLine(numInput + "! = " + factorial);
+        }
     }
 }
