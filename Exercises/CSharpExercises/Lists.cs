@@ -71,5 +71,42 @@ namespace Exercises.CSharpExercises
 
             Console.WriteLine("Reverse name: " + reverseName);
         }
+
+        // <summary>
+        // Udemy Course C# Basics for Beginners
+        // Exercise 56-3
+        // Write a program and ask the user to enter 5 numbers.  If a number has been previously entered, display an error message
+        // and ask the user to re-try.  Once the user successfully enters 5 unique numbers, sort them and display the result.
+        // </summary>
+        public static void Exercise3()
+        {
+            var count = 0;
+            List<int> numList = new List<int>();
+
+            do
+            {
+                Console.WriteLine("Please enter a unique number: ");
+                var curNumber = Console.ReadLine();
+                if (String.IsNullOrEmpty(curNumber) && count < 5)
+                {
+                    Console.WriteLine("I need more numbers.");
+                    continue;
+                }
+                if (numList.Contains(Int32.Parse(curNumber)))
+                {
+                    Console.WriteLine("You already used that number.");
+                    continue;
+                }
+                numList.Add(Int32.Parse(curNumber));
+                count++;
+            } while (count < 5);
+
+            numList.Sort();
+
+            Console.WriteLine("Sorted list:");
+            for (var i = 0; i < 5; i++)
+                Console.WriteLine(numList[i]);
+
+        }
     }
 }
