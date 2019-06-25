@@ -102,5 +102,31 @@ namespace Exercises.CSharpExercises
                 Console.WriteLine("Invalid time");
 
         }
+
+        // <summary>
+        // Udemy Course C# Basics for Beginners
+        // Exercise 68-4
+        // Write a program and ask the user to enter a few words separated by a space.  Use the words to create a variable in PascalCase.
+        // </summary>
+        public static void Exercise4()
+        {
+            Console.WriteLine("Please enter a few words separated by a space:");
+            var input = Console.ReadLine();
+            string[] words = input.Split(' ');
+
+            var newWords = new List<string>();
+
+            foreach (var word in words)
+            {
+                var first = word.Substring(0, 1);
+                var rest = word.Substring(1, word.Length - 1);
+
+                newWords.Add(string.Concat(first.ToUpper(), rest.ToLower()));
+            }
+
+            var final = String.Join("", newWords);
+
+            Console.WriteLine("Variable name:  " + final);
+        }
     }
 }
