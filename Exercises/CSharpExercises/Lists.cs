@@ -108,5 +108,76 @@ namespace Exercises.CSharpExercises
                 Console.WriteLine(numList[i]);
 
         }
+
+        // <summary>
+        // Udemy Course C# Basics for Beginners
+        // Exercise 56-4
+        // Write a program and ask the user to continuously write a number or type "Quit" to exit.  The list of numbers may include duplicates.
+        // Display the unique numbers that the use has entered.
+        // </summary>
+        public static void Exercise4()
+        {
+            List<int> numList = new List<int>();
+
+            while (true)
+            {
+                Console.WriteLine("Please enter a number or type \"Quit\" to quit: ");
+                var curNumber = Console.ReadLine();
+
+                if (curNumber.ToLower() == "quit")
+                    break;
+
+                numList.Add(Int32.Parse(curNumber));
+            }
+
+            List<int> noDupes = new List<int>();
+
+            foreach (var number in numList)
+            {
+                if (!(noDupes.Contains(number)))
+                    noDupes.Add(number);
+            }
+
+            Console.WriteLine("Output of unique numbers:");
+            for (var i = 0; i < noDupes.Count; i++)
+                Console.WriteLine(noDupes[i]);
+        }
+
+        // <summary>
+        // Udemy Course C# Basics for Beginners
+        // Exercise 56-5
+        // Write a program and ask the user to supply a list of comma separated numbers.  If the list is empty or includes less than 5 numbers,
+        // display "Invalid List" and ask the user to re-try.  Otherwise display the smallest 3 numbers in the list.
+        // </summary>
+        public static void Exercise5()
+        {
+            var numbers = "";
+            string[] numList;
+
+            while (true)
+            {
+                Console.WriteLine("Please enter a series of numbers (5 or more) seprated by commas");
+                numbers = Console.ReadLine();
+                numList = numbers.Split(',', StringSplitOptions.RemoveEmptyEntries);
+
+                if (numList.Length < 5)
+                {
+                    Console.WriteLine("Invalid list.  Please try again with at least 5 numbers, separated by commas.");
+                    continue;
+                }
+                break;
+            }
+
+            int[] nums = new int[numList.Length];
+            for (int i = 0; i < numList.Length; i++)
+            {
+                nums[i] = int.Parse(numList[i]);
+            }
+
+            Array.Sort(nums);
+            for (int i = 0; i < 3; i++)
+                Console.WriteLine(nums[i]);
+
+        }
     }
 }
