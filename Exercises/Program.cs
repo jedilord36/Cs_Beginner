@@ -7,7 +7,7 @@ namespace Exercises
     {
         static void Main(string[] args)
         {
-            Text.Exercise5();
+            Files.Exercise1();
         }
     }
 }
