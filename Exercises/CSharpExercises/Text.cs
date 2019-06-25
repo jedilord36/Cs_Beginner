@@ -15,7 +15,7 @@ namespace Exercises.CSharpExercises
         public static void Exercise1()
         {
      
-            Console.WriteLine("Please enter a series of numbers seprated by hyphens");
+            Console.WriteLine("Please enter a series of numbers separated by hyphens");
             var numbers = Console.ReadLine();
 
             var numList = new List<int>();
@@ -38,6 +38,68 @@ namespace Exercises.CSharpExercises
                 Console.WriteLine("Consecutive");
             else
                 Console.WriteLine("Not Consecutive");
+
+        }
+
+        // <summary>
+        // Udemy Course C# Basics for Beginners
+        // Exercise 68-2
+        // Write a program and ask the user to enter a few numbers separated by a hyphen.  If the user simply presses Enter, without
+        // supplying an input, exit immediately; otherwise, check to see if there are duplicates.  If so, display "Duplicate" on console.
+        // </summary>
+        public static void Exercise2()
+        {
+            Console.WriteLine("Please enter some numbers separated by hyphens");
+            var numbers = Console.ReadLine();
+
+            var numList = new List<int>();
+            var newList = new List<int>();
+
+            foreach (var number in numbers.Split('-'))
+                numList.Add(Convert.ToInt32(number));
+
+            var duplicates = false;
+
+            for (var i = 0; i < numList.Count; i++)
+            {
+                if(newList.Contains(numList[i]))
+                {
+                    duplicates = true;
+                    break;
+                }
+                newList.Add(numList[i]);
+            }
+
+            if (duplicates)
+                Console.WriteLine("Duplicate");
+            else
+                Console.WriteLine("No duplicates");
+        }
+
+        // <summary>
+        // Udemy Course C# Basics for Beginners
+        // Exercise 68-3
+        // Write a program and ask the user to enter a time value in the 24-hour time format.  A valid time sould be between 00:00 and 23:59.
+        // If the time is valid, display "Ok"; otherwise display "Invalid time".  If no value, consider invalid.
+        // </summary>
+        public static void Exercise3()
+        {
+            Console.WriteLine("Please enter a time value in the 24-hour time format (e.g. 19:00):");
+            var input = Console.ReadLine();
+
+            if (!String.IsNullOrEmpty(input))
+            {
+                var time = new List<int>();
+                foreach (var number in input.Split(':'))
+                    time.Add(Convert.ToInt32(number));
+
+                if (time.Count == 2 && (time[0] >= 0 && time[0] < 24) && (time[1] >= 0 && time[1] < 60))
+                    Console.WriteLine("Ok");
+                else
+                    Console.WriteLine("Invalid time");
+            }
+            else
+                Console.WriteLine("Invalid time");
 
         }
     }
