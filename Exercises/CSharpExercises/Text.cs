@@ -128,5 +128,29 @@ namespace Exercises.CSharpExercises
 
             Console.WriteLine("Variable name:  " + final);
         }
+
+        // <summary>
+        // Udemy Course C# Basics for Beginners
+        // Exercise 68-5
+        // Write a program and ask the user to enter an English word.  Count and return the number of vowels (a, e, i, o, u) in the word.
+        // </summary>
+        public static void Exercise5()
+        {
+            Console.WriteLine("Please enter an English word:");
+            var input = Console.ReadLine().ToLower();
+
+            var numVowels = 0;
+            var vowels = new List<char>(new char[] { 'a', 'e', 'i', 'o', 'u' });
+
+            foreach (var character in input)
+            {
+                if (vowels.Contains(character))
+                    numVowels++;
+            }
+
+            Console.WriteLine("Number of vowels: " + numVowels);
+
+        }
+
     }
 }
